@@ -772,3 +772,20 @@ a:hover {
     border: none;
     display: block;
 }
+
+/* --- Site Credits --- */
+#site-credits {
+    max-width: 950px;
+    margin: 6px auto 0 auto;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    padding-bottom: 12px;
+}
+
+.credit-name {
+    color: var(--accent-brown);
+    font-weight: bold;
+}
+
