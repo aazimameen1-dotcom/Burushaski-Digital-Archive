@@ -386,7 +386,7 @@ function showLexicon() {
 
     primary.innerHTML = `
         <div style="border: 1px solid var(--border-grey); background: #ffffff; padding: 0; margin-top: 10px;">
-            <iframe id="dict-iframe" src="burushaski-dictionary/index.html" style="width: 100%; height: 950px; border: none; display: block;"></iframe>
+            <iframe id="dict-iframe" src="burushaski-dictionary/index.html"></iframe>
         </div>
     `;
 
