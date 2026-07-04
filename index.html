@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Burushaski Digital Archive: A multimedia digital resource documenting the language isolate and oral history collections.">
+    <title>Digital Himalaya: Burushaski Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Skip Navigation Link for Accessibility -->
+    <div id="skip"><a href="#content-primary">Skip to content</a></div>
+
+    <!-- Digital Himalaya Header Banner -->
+    <div id="header"> 
+        <div id="branding">
+            <p>
+                <a href="#" onclick="showHome()" class="archive-logo" id="header-logo-text">Burushaski Digital Archive</a>
+            </p>
+        </div>
+        <div id="site-search">
+            <ul>
+                <li class="last"><a href="#" onclick="showLexicon()" id="header-dictionary-link">Dictionary</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Digital Himalaya Page Container -->
+    <div id="container">
+        <div id="content">
+            
+            <!-- Breadcrumbs Navigation -->
+            <ul id="nav-breadcrumb">
+                <!-- Injected dynamically by app.js -->
+            </ul>
+
+            <!-- Single-Column Content Structure -->
+            <div class="content-columns single-column">
+                
+                <!-- Primary Content Area -->
+                <div id="content-primary" role="main">
+                    <!-- Dynamic Page Views: Home menu lists, Audio Details, or Lexicon search -->
+                </div>
+
+            </div>
+            
+        </div>
+
+        <!-- Academic Citation Modal -->
+        <div class="modal-overlay" id="citation-modal" onclick="closeModal(event)">
+            <div class="modal-container" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h3 id="modal-item-title">Copy Academic Citation</h3>
+                    <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="citation-option">
+                        <span class="citation-format-label">Chicago Style (Notes & Bibliography)</span>
+                        <div class="citation-box" id="citation-chicago">
+                            <!-- Injected by app.js -->
+                        </div>
+                    </div>
+                    <div class="citation-option">
+                        <span class="citation-format-label">MLA Style (9th Ed.)</span>
+                        <div class="citation-box" id="citation-mla">
+                            <!-- Injected by app.js -->
+                        </div>
+                    </div>
+                    <div class="citation-option">
+                        <span class="citation-format-label">APA Style (7th Ed.)</span>
+                        <div class="citation-box" id="citation-apa">
+                            <!-- Injected by app.js -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-btn" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simple Toast Alert -->
+        <div class="toast-container" id="toast-wrapper"></div>
+
+        <!-- Site Footer Info -->
+        <ul id="site-info">
+            <li class="copy last" id="footer-copyright">Burushaski Digital Archive &copy; 2026</li>
+        </ul>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

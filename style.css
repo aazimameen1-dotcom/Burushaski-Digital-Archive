@@ -1,0 +1,645 @@
+/* Burushaski Digital Archive - Stylesheet */
+/* 100% modeled on the layout.css and visual format of digitalhimalaya.com */
+
+:root {
+    --bg-body: #669999;       /* Slate Teal body background */
+    --bg-sheet: #ffffff;      /* White content page */
+    --text-color: #1a1a1a;    /* Dark graphite text */
+    --text-muted: #555555;    /* Muted grey */
+    --accent-blue: #000066;   /* Deep Blue headers and borders */
+    --accent-brown: #7d5733;  /* Scholarly brown for links */
+    --border-grey: #c2bfae;   /* Khaki-grey structural borders */
+    --border-light: #eaeaea;  /* Light grey separators */
+    
+    --font-serif: "Georgia", "Times New Roman", Times, serif;
+    --font-sans: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    --font-mono: "Courier New", Courier, monospace;
+}
+
+/* Page Reset & Core */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important; /* Forces flat 2000s square edges */
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    font-size: 0.85rem; /* Classic compact font size */
+    line-height: 1.5;
+    padding: 0 0 20px 0;
+}
+
+/* Accessibility skip link */
+#skip a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Links style */
+a {
+    color: var(--accent-brown);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+/* --- Header Banner --- */
+#header {
+    background-color: var(--bg-sheet);
+    max-width: 950px;
+    margin: 20px auto 0 auto;
+    border-top: 1px solid var(--border-grey);
+    border-left: 1px solid var(--border-grey);
+    border-right: 1px solid var(--border-grey);
+    border-bottom: 3px solid var(--accent-blue);
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#branding {
+    display: flex;
+    align-items: center;
+}
+
+.archive-logo {
+    font-family: var(--font-serif);
+    font-size: 1.95rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.archive-logo:hover {
+    color: var(--accent-brown);
+    text-decoration: none;
+}
+
+/* Search Form (Classic Header search) */
+#site-search {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.search-form label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+.search-form input[type="text"] {
+    border: 1px solid var(--border-grey);
+    padding: 3px 6px;
+    font-size: 0.8rem;
+    font-family: var(--font-sans);
+    outline: none;
+    width: 130px;
+}
+
+.search-form input[type="text"]:focus {
+    border-color: var(--accent-blue);
+}
+
+#header-search-button {
+    height: 22px;
+    border: none;
+    cursor: pointer;
+}
+
+#site-search ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    font-size: 0.825rem;
+}
+
+#site-search ul li {
+    font-family: var(--font-serif);
+}
+
+#site-search ul li a {
+    color: var(--accent-brown);
+    font-weight: bold;
+}
+
+#site-search ul li a:hover {
+    color: var(--accent-blue);
+}
+
+/* --- Container Sheet --- */
+#container {
+    background-color: var(--bg-sheet);
+    max-width: 950px;
+    margin: 0 auto;
+    border-left: 1px solid var(--border-grey);
+    border-right: 1px solid var(--border-grey);
+    border-bottom: 1px solid var(--border-grey);
+    padding: 20px 25px;
+}
+
+/* Nav Breadcrumbs */
+#nav-breadcrumb {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+#nav-breadcrumb li:not(.last)::after {
+    content: " >";
+    color: var(--text-muted);
+    margin-left: 8px;
+}
+
+#nav-breadcrumb a {
+    text-decoration: none;
+    color: var(--text-muted);
+}
+
+#nav-breadcrumb a:hover {
+    color: var(--accent-blue);
+    text-decoration: underline;
+}
+
+/* Column Grid */
+.content-columns.single-column {
+    display: block;
+}
+
+#content-primary {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    width: 100%;
+}
+
+#content-primary p {
+    margin-bottom: 12px;
+}
+
+#content-primary strong {
+    color: var(--accent-blue);
+}
+
+/* Menu Column System */
+.menu-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.menu {
+    flex: 1;
+    min-width: 200px;
+}
+
+.menu dt {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    color: var(--accent-blue);
+}
+
+.menu dd {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    padding: 4px 0;
+    margin-left: 0;
+    text-indent: 6px;
+    border-bottom: 1px dotted var(--border-light);
+}
+
+.menu dd::before {
+    content: "• ";
+    color: var(--accent-brown);
+}
+
+.menu dd a {
+    text-decoration: underline;
+}
+
+/* --- Detail Layouts (Audio Card) --- */
+.audio-card-classic {
+    border: 1px solid var(--border-grey);
+    background-color: #faf9f5;
+    padding: 20px;
+}
+
+.audio-header-classic {
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.audio-header-classic h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+    display: inline;
+}
+
+.audio-genre-tag {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Metadata table sheet */
+.metadata-table-classic {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.metadata-table-classic td {
+    padding: 4px 6px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.85rem;
+}
+
+.metadata-table-classic tr td:first-child {
+    font-weight: bold;
+    width: 25%;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.audio-desc-classic {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Custom classic player panel */
+.custom-player-classic {
+    background-color: #f3f0e8;
+    border: 1px solid var(--border-grey);
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.timeline-slider-classic {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    height: 2px;
+    background: var(--border-grey);
+    outline: none;
+}
+
+.timeline-slider-classic::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 12px;
+    background: var(--accent-blue);
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.timeline-slider-classic::-moz-range-thumb {
+    width: 8px;
+    height: 12px;
+    background: var(--accent-blue);
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.vol-slider-classic {
+    -webkit-appearance: none;
+    width: 45px;
+    height: 2px;
+    background: var(--border-grey);
+}
+
+.vol-slider-classic::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 6px;
+    height: 8px;
+    background: var(--text-muted);
+}
+
+.retro-btn {
+    background-color: #faf9f5;
+    border: 1px solid var(--border-grey);
+    padding: 4px 10px;
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.retro-btn:hover {
+    background-color: #eae6dd;
+    border-color: var(--accent-blue);
+}
+
+/* Back Link */
+.back-link-row {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* --- Lexicon Panel --- */
+.lexicon-panel-classic {
+    border: 1px solid var(--border-grey);
+    padding: 20px;
+    background-color: #faf9f5;
+}
+
+.lexicon-search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.lexicon-input-box {
+    flex-grow: 1;
+    border: 1px solid var(--border-grey);
+    padding: 5px 8px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+}
+
+.pos-toggle-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-grey);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.pos-toggle-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--accent-brown);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.pos-toggle-btn.active {
+    color: var(--accent-blue);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: default;
+}
+
+.results-header-classic {
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.results-header-classic h3 {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+}
+
+.results-count-classic {
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    color: var(--text-muted);
+}
+
+/* Dictionary Entries Cards */
+.dict-card-classic {
+    border-bottom: 1px solid var(--border-grey);
+    padding: 12px 0;
+}
+
+.dict-card-classic:last-child {
+    border-bottom: none;
+}
+
+.dict-word-classic {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+    margin-bottom: 2px;
+}
+
+.dict-ipa-classic {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-left: 8px;
+}
+
+.dict-pos-classic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-left: 6px;
+}
+
+.dict-perso-classic {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.5rem;
+    direction: rtl;
+    color: var(--text-color);
+    margin: 4px 0 8px 0;
+    line-height: 1.5;
+}
+
+.dict-trans-classic {
+    font-size: 0.9rem;
+}
+
+.dict-trans-classic strong {
+    font-family: var(--font-serif);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-right: 5px;
+}
+
+/* Modal Citations style */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-container {
+    background-color: var(--bg-sheet);
+    border: 1px solid var(--accent-blue);
+    width: 100%;
+    max-width: 550px;
+}
+
+.modal-header {
+    background-color: #faf9f5;
+    border-bottom: 1px solid var(--border-grey);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.citation-option {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.citation-format-label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.citation-box {
+    background-color: var(--bg-paper);
+    border: 1px solid var(--border-grey);
+    padding: 6px 30px 6px 8px;
+    font-size: 0.85rem;
+    position: relative;
+}
+
+.copy-citation-icon-btn {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.copy-citation-icon-btn:hover {
+    color: var(--accent-blue);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-grey);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Toast alert style */
+.toast-container {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+}
+
+.toast {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    padding: 6px 15px;
+    font-size: 0.8rem;
+    border: 1px solid #000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* --- Footer --- */
+#site-info {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.75rem;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-grey);
+    padding-top: 12px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+#site-info li {
+    font-family: var(--font-serif);
+}
+
+/* --- Interactive Transcript Styles --- */
+.transcript-line:hover:not(.active-highlight) {
+    background-color: #f3f0e8 !important;
+}
