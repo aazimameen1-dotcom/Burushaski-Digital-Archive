@@ -439,7 +439,6 @@ function showAbout() {
                 <p>This archive focuses specifically on the lexicographical and phonetic preservation of the <strong>Srinagar Dialect (Hari Parbat)</strong>. Spoken by families who relocated from Gilgit-Baltistan to Srinagar during the early 1900s, this variant displays localized vowel shifts, phonetic centralization (/a/ → /ʌ/), and lexical structural loan adaptation from Kashmiri.</p>
                 <p> Labeled files and lexicon records were compiled using academic field notes and informant logs:</p>
                 <ul class="about-list">
-                    <li><strong>Fieldwork Investigator:</strong> Dr. Sadaf Munshi (Associate Professor, Linguistics, University of North Texas).</li>
                     <li><strong>Primary Srinagar Informants:</strong> Mr. Raja Zeeshan, Mr. Raja Yawar, Mr. Raja Anees.</li>
                     <li><strong>Sources:</strong> UNT Digital Library Archive - Burushaski Collection.</li>
                 </ul>
