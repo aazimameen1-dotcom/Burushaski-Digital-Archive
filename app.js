@@ -444,6 +444,16 @@ function showAbout() {
                     <li><strong>Sources:</strong> UNT Digital Library Archive - Burushaski Collection.</li>
                 </ul>
             </div>
+
+            <div class="about-section">
+                <h2>Archive Development Team</h2>
+                <p>This digital archive was designed, developed, and maintained by:</p>
+                <ul class="about-list">
+                    <li><strong>Aazim Ameen</strong></li>
+                    <li><strong>Mehboob ul Haq</strong></li>
+                    <li><strong>Manan Qadri</strong></li>
+                </ul>
+            </div>
         </div>
         
         <div class="back-link-row">
